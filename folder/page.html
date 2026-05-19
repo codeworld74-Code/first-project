@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Simple Client</title>
+</head>
+<body>
+  <h2>Server Response:</h2>
+  <div id="output"></div>
+
+  <script>
+    fetch("http:// 192.168.175.26:8080")
+      .then(response => response.text())
+      .then(data => {
+        document.getElementById("output").innerText = data;
+      })
+      .catch(err => {
+        document.getElementById("output").innerText = "Error: " + err;
+      });
+  </script>
+</body>
+</html>
